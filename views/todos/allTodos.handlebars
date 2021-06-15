@@ -1,0 +1,29 @@
+<h3 class="text-center  fw-bold title-custom mb-5">Pending Todo list</h3>
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>Task</th>
+          <th>Priority</th>
+          <th>DeadLine</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      {{#each todos}}
+      <tr>
+          <td>{{this.task}}</td>
+          <td>{{this.priority}}</td>
+          <td>{{this.deadline}}</td>
+          
+          <td>
+              <a href="/todo/{{this._id}}"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+          </td>
+          <td>
+              <a href="/todo/delete/{{this._id}}"><i class="fas fa-trash-alt"></i></a>
+          </td>
+      </tr>
+      {{/each}}
+  </tbody>
+</table>
+
+<a href="/todo" class="btn btn-danger btn-lg">Add New Task</a></>
